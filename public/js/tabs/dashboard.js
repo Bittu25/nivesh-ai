@@ -91,22 +91,22 @@ window.DashboardTab = {
         '<div class="db1-stat accent-green">' +
           '<div class="db1-stat-label">Portfolio Value</div>' +
           '<div class="db1-stat-val">' + window.Utils.fmtK(p.totalValue) + '</div>' +
-          '<div class="db1-stat-change up">↑ ' + p.xirr + '% XIRR</div>' +
+          '<div class="db1-stat-change up">↑ ' + p.xirr + '% XIRR p.a.</div>' +
         '</div>' +
         '<div class="db1-stat accent-blue">' +
           '<div class="db1-stat-label">Total Returns</div>' +
           '<div class="db1-stat-val" style="color:var(--green-dark);">' + window.Utils.fmtK(gain) + '</div>' +
-          '<div class="db1-stat-change up">+' + gainPct + '% overall</div>' +
+          '<div class="db1-stat-change up">+' + gainPct + '% on invested</div>' +
         '</div>' +
         '<div class="db1-stat">' +
           '<div class="db1-stat-label">Monthly SIP</div>' +
           '<div class="db1-stat-val">' + window.Utils.fmt(u.monthlySavings) + '</div>' +
-          '<div class="db1-stat-change neutral">⏰ Next in 9 days</div>' +
+          '<div class="db1-stat-change neutral">Across ' + p.holdings.length + ' fund' + (p.holdings.length !== 1 ? 's' : '') + '</div>' +
         '</div>' +
         '<div class="db1-stat accent-amber">' +
-          '<div class="db1-stat-label">Active Goals</div>' +
-          '<div class="db1-stat-val">' + goals.length + '</div>' +
-          '<div class="db1-stat-change up" style="color:var(--blue-dark);">' + (goals.length > 0 ? 'On track ✓' : 'Add goals') + '</div>' +
+          '<div class="db1-stat-label">Goals</div>' +
+          '<div class="db1-stat-val">' + goals.length + ' active</div>' +
+          '<div class="db1-stat-change up" style="color:var(--blue-dark);">' + (goals.length > 0 ? '✓ On track' : 'Set goals') + '</div>' +
         '</div>' +
       '</div>' +
 
