@@ -1,0 +1,99 @@
+/* ===== Dashboard — Single Page Layout ===== */
+.db1-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px;
+}
+.db1-greeting { font-size: 22px; font-family: var(--font-serif); color: var(--text); letter-spacing:-0.02em; }
+.db1-greeting strong { color: var(--brand); }
+.db1-date { font-size: 12px; color: var(--text-3); margin-top: 3px; }
+
+/* AI Banner */
+.db1-ai-banner {
+  background: linear-gradient(130deg, #0d4436 0%, #164e8a 100%);
+  border-radius: var(--r-xl); padding: 16px 20px;
+  display: flex; gap: 12px; align-items: flex-start;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 18px rgba(13,68,54,0.3);
+}
+.db1-ai-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.db1-ai-text { font-size: 13.5px; color: rgba(255,255,255,0.88); line-height: 1.65; }
+.db1-ai-text strong { color: white; }
+
+/* Stats */
+.db1-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin-bottom: 18px;
+}
+.db1-stat {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-xl); padding: 16px 16px 14px;
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+  transition: transform var(--t), box-shadow var(--t);
+}
+.db1-stat:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.db1-stat::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: var(--brand); border-radius: var(--r-xl) var(--r-xl) 0 0;
+}
+.db1-stat.accent-green::before { background: var(--green); }
+.db1-stat.accent-blue::before  { background: var(--blue); }
+.db1-stat.accent-amber::before { background: var(--amber); }
+.db1-stat-label { font-size: 11px; font-weight: 600; color: var(--text-3); text-transform: uppercase; letter-spacing:0.06em; margin-bottom: 8px; }
+.db1-stat-val   { font-family: var(--font-serif); font-size: 22px; color: var(--text); margin-bottom: 5px; letter-spacing:-0.02em; }
+.db1-stat-change { font-size: 12px; font-weight: 500; }
+.db1-stat-change.up   { color: var(--green-dark); }
+.db1-stat-change.down { color: var(--red-dark); }
+.db1-stat-change.neutral { color: var(--text-3); }
+
+/* Two column charts */
+.db1-two-col {
+  display: grid; grid-template-columns: 1.5fr 1fr;
+  gap: 14px; margin-bottom: 18px;
+}
+
+/* Goals */
+.db1-goal {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.db1-goal:last-child { border-bottom: none; padding-bottom: 0; }
+.db1-goal-icon { width: 36px; height: 36px; border-radius: var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.db1-goal-body { flex: 1; min-width: 0; }
+.db1-goal-row  { display:flex; justify-content:space-between; align-items:center; }
+.db1-goal-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.db1-goal-pct  { font-size: 13px; font-weight: 700; }
+
+/* Holdings */
+.db1-holding {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 0; border-bottom: 1px solid var(--border);
+}
+.db1-holding:last-child { border-bottom: none; padding-bottom: 0; }
+.db1-fund-logo { width: 40px; height: 40px; border-radius: var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; flex-shrink:0; }
+.db1-fund-info { flex: 1; min-width: 0; }
+.db1-fund-name { font-size: 13px; font-weight: 600; color: var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.db1-fund-type { font-size: 11px; color: var(--text-3); margin-top:2px; }
+.db1-fund-vals { text-align: right; flex-shrink: 0; }
+.db1-fund-curr { font-size: 14px; font-weight: 700; color: var(--text); }
+.db1-fund-ret  { font-size: 12px; font-weight: 600; margin-top: 2px; }
+
+/* Quick Actions */
+.db1-actions { display: flex; flex-direction: column; gap: 8px; }
+.db1-action-btn {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 14px; border-radius: var(--r);
+  cursor: pointer; transition: all var(--t);
+  border: 1px solid transparent;
+}
+.db1-action-btn:hover { filter: brightness(0.95); transform: translateX(3px); }
+.db1-action-icon { width: 36px; height: 36px; border-radius: var(--r-sm); background: white; display:flex; align-items:center; justify-content:center; font-size:16px; box-shadow: var(--shadow-xs); flex-shrink:0; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .db1-stats { grid-template-columns: 1fr 1fr; }
+  .db1-two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .db1-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .db1-greeting { font-size: 18px; }
+}

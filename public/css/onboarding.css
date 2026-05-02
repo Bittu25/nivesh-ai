@@ -1,0 +1,106 @@
+#onboarding { min-height: 100%; background: var(--surface); display: flex; flex-direction: column; }
+.ob-topbar { height: 62px; display: flex; align-items: center; gap: 9px; padding: 0 28px; border-bottom: 1px solid var(--border); }
+.ob-body { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 32px 24px; overflow-y: auto; background: radial-gradient(ellipse at 60% 0%, rgba(26,107,90,0.05) 0%, transparent 60%); }
+.ob-container { width: 100%; max-width: 500px; }
+.ob-step { display: none; animation: fadeIn 0.3s ease; }
+.ob-step.active { display: block; }
+
+.ob-progress { height: 4px; background: var(--border); border-radius: var(--r-full); margin-bottom: 36px; overflow: hidden; }
+.ob-progress-fill { height: 100%; background: linear-gradient(90deg, var(--brand) 0%, var(--brand-mid) 100%); border-radius: var(--r-full); transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
+
+.ob-eyebrow { font-size: 12px; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.ob-title { font-family: var(--font-serif); font-size: 34px; color: var(--text); margin-bottom: 10px; line-height: 1.2; letter-spacing: -0.03em; }
+.ob-title em { color: var(--brand); font-style: italic; }
+.ob-sub { font-size: 15px; color: var(--text-2); margin-bottom: 36px; line-height: 1.65; }
+
+.income-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.income-option {
+  border: 2px solid var(--border); border-radius: var(--r-lg); padding: 16px 14px;
+  cursor: pointer; transition: all var(--t); text-align: center;
+}
+.income-option:hover { border-color: var(--brand-mid); background: var(--brand-pale); }
+.income-option.sel { border-color: var(--brand); background: var(--brand-light); }
+.income-option .io-amount { font-size: 15px; font-weight: 700; color: var(--text); }
+.income-option.sel .io-amount { color: var(--brand); }
+.income-option .io-sub { font-size: 12px; color: var(--text-3); margin-top: 3px; }
+
+.goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px; }
+.goal-card {
+  border: 2px solid var(--border); border-radius: var(--r-lg); padding: 16px 10px;
+  cursor: pointer; transition: all var(--t); text-align: center; position: relative;
+}
+.goal-card:hover { border-color: var(--brand-mid); background: var(--brand-pale); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.goal-card.sel { border-color: var(--brand); background: var(--brand-light); }
+.goal-card.sel::after { content: '✓'; position: absolute; top: 7px; right: 9px; font-size: 11px; font-weight: 700; color: var(--brand); }
+.goal-emoji { font-size: 26px; margin-bottom: 7px; }
+.goal-label { font-size: 12px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+.goal-sub   { font-size: 11px; color: var(--text-3); margin-top: 3px; }
+.goal-card.sel .goal-label { color: var(--brand); }
+
+.risk-row { display: flex; gap: 12px; margin-bottom: 22px; }
+.risk-btn {
+  flex: 1; padding: 18px 10px; border: 2px solid var(--border); border-radius: var(--r-xl);
+  cursor: pointer; text-align: center; font-family: var(--font-sans); background: var(--surface);
+  transition: all var(--t); box-shadow: var(--shadow-xs);
+}
+.risk-btn:hover { border-color: var(--brand-mid); background: var(--brand-pale); transform: translateY(-2px); box-shadow: var(--shadow); }
+.risk-btn.sel { border-color: var(--brand); background: var(--brand-light); box-shadow: var(--shadow-brand); }
+.risk-icon { font-size: 28px; margin-bottom: 8px; }
+.risk-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.risk-sub  { font-size: 11px; color: var(--text-3); margin-top: 4px; line-height: 1.4; }
+.risk-btn.sel .risk-name { color: var(--brand); }
+
+.ai-suggest {
+  background: linear-gradient(135deg, var(--brand-pale) 0%, var(--blue-bg) 100%);
+  border: 1.5px solid rgba(26,107,90,0.2); border-radius: var(--r);
+  padding: 14px 16px; margin-bottom: 24px; font-size: 13px; color: var(--text-2); line-height: 1.65;
+}
+.ai-suggest strong { color: var(--brand); font-weight: 700; }
+.ai-suggest-icon { display: inline-block; margin-right: 6px; }
+
+.plan-card {
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-lg);
+  padding: 22px; margin-bottom: 24px; box-shadow: var(--shadow-sm);
+}
+.plan-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.plan-total-label { font-size: 12px; color: var(--text-3); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.plan-total-val { font-family: var(--font-serif); font-size: 32px; color: var(--brand); line-height: 1; }
+
+.ob-fund-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: var(--r); background: var(--surface-2);
+  margin-bottom: 8px; border: 1px solid var(--border);
+}
+.ob-fund-logo { width: 36px; height: 36px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+.ob-fund-name { flex: 1; font-size: 13px; font-weight: 500; color: var(--text); }
+.ob-fund-type { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.ob-fund-amt  { font-size: 15px; font-weight: 700; color: var(--text); }
+
+@media (max-width: 520px) {
+  .goal-grid { grid-template-columns: 1fr 1fr; }
+  .ob-title { font-size: 28px; }
+  .risk-row { flex-direction: column; }
+  .income-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Goal Amount Cards (Step 3) */
+.goal-amt-card {
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--r-xl); padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+}
+.goal-amt-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+}
+.goal-amt-icon {
+  width: 42px; height: 42px; border-radius: var(--r); background: var(--surface-2);
+  display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+}
+.goal-amt-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.goal-amt-hint { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.goal-amt-ai-suggest {
+  background: var(--brand-light); border: 1px solid rgba(26,107,90,0.15);
+  border-radius: var(--r-sm); padding: 10px 12px;
+  font-size: 12px; color: var(--brand); line-height: 1.6; margin-bottom: 14px;
+}
+.goal-amt-ai-suggest strong { font-weight: 700; }

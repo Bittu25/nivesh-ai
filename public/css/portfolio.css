@@ -1,0 +1,7 @@
+/* Portfolio tab styles — extended layout rules */
+.portfolio-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.txn-type { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+.txn-sip     { background: var(--blue-bg);   color: var(--blue); }
+.txn-lump    { background: var(--purple-bg); color: var(--purple); }
+.txn-redeem  { background: var(--red-bg);    color: var(--red); }
+@media (max-width: 900px) { .portfolio-two-col { grid-template-columns: 1fr; } }

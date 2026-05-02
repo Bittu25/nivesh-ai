@@ -1,0 +1,60 @@
+.invest-hero {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-2xl);
+  padding: 28px; display: flex; align-items: center; gap: 28px; margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.invest-hero h2 { font-family: var(--font-serif); font-size: 24px; margin-bottom: 8px; letter-spacing: -0.02em; }
+.invest-hero p  { font-size: 13.5px; color: var(--text-2); line-height: 1.65; max-width: 400px; }
+.invest-hero-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+.invest-hero-stat {
+  text-align: center; padding: 22px 28px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--brand-pale) 0%, var(--blue-bg) 100%);
+  border-radius: var(--r-xl); border: 1px solid var(--brand-light); min-width: 170px;
+}
+.ihs-label { font-size: 11px; color: var(--text-3); margin-bottom: 6px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.06em; }
+.ihs-value { font-family: var(--font-serif); font-size: 36px; color: var(--brand); line-height: 1; letter-spacing: -0.03em; }
+.ihs-sub   { font-size: 12px; color: var(--brand); margin-top: 6px; opacity: 0.7; font-weight: 500; }
+
+.fund-filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+.fund-filters-right { margin-left: auto; font-size: 12px; color: var(--text-3); font-style: italic; }
+
+.fund-item {
+  background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--r-xl);
+  padding: 18px 20px; display: flex; align-items: center; gap: 16px;
+  margin-bottom: 10px; cursor: pointer; transition: all var(--t);
+  box-shadow: var(--shadow-xs);
+}
+.fund-item:hover { border-color: var(--brand-mid); box-shadow: var(--shadow); transform: translateY(-2px); }
+.fund-logo {
+  width: 48px; height: 48px; border-radius: var(--r); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800;
+}
+.fund-info { flex: 1; min-width: 0; }
+.fund-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 7px; display: flex; align-items: center; gap: 7px; flex-wrap: wrap; letter-spacing: -0.01em; }
+.fund-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.fund-returns { text-align: right; flex-shrink: 0; }
+.fund-ret-value { font-family: var(--font-serif); font-size: 20px; color: var(--green-dark); line-height: 1; font-weight: 400; }
+.fund-ret-label { font-size: 11px; color: var(--text-3); margin-top: 4px; font-weight: 500; }
+.fund-min-sip { font-size: 12px; color: var(--text-2); margin-top: 8px; font-weight: 500; }
+
+/* SIP Modal */
+.sip-amount-display {
+  text-align: center; padding: 22px; background: linear-gradient(135deg, var(--brand-pale), var(--blue-bg));
+  border-radius: var(--r-xl); margin-bottom: 22px; border: 1px solid var(--brand-light);
+}
+.sip-amount-display .sa-val { font-family: var(--font-serif); font-size: 44px; color: var(--brand); line-height: 1; letter-spacing: -0.03em; }
+.sip-amount-display .sa-label { font-size: 12px; color: var(--text-3); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+.sip-presets { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 22px; }
+.sip-preset {
+  height: 32px; padding: 0 14px; border-radius: var(--r-full);
+  border: 1.5px solid var(--border); font-size: 12px; font-weight: 600;
+  font-family: var(--font-sans); cursor: pointer; background: var(--surface);
+  color: var(--text-2); transition: all var(--t);
+}
+.sip-preset:hover, .sip-preset.active { background: var(--brand-light); border-color: var(--brand); color: var(--brand); }
+
+@media (max-width: 640px) {
+  .invest-hero { flex-direction: column; }
+  .invest-hero-stat { width: 100%; }
+  .invest-hero h2 { font-size: 20px; }
+}

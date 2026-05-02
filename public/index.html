@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nivesh AI — Smart Investing for Bharat</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <!-- PWA / Installable App -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Nivesh AI">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="/css/reset.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/tokens.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/components.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/layout.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/onboarding.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/dashboard.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/invest.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/advisor.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/portfolio.css?v=1777721066" />
+  <link rel="stylesheet" href="/css/animations.css?v=1777721066" />
+</head>
+<body>
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="splash-logo">
+        <svg class="splash-logomark" viewBox="0 0 40 40" fill="none" width="56" height="56"><circle cx="20" cy="20" r="20" fill="#0f172a"/><text x="20" y="28" text-anchor="middle" font-size="22" font-weight="700" fill="#1a9e75" font-family="system-ui,sans-serif">₹</text><path d="M29 8L33 4L37 8" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="33" y1="4" x2="33" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="splash-name">Nivesh AI</span>
+      </div>
+      <p class="splash-tagline">Aapka paisa, aapke sapne</p>
+      <div class="splash-spinner"><div></div><div></div><div></div></div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="app" style="display:none;">
+
+    <!-- ONBOARDING -->
+    <section id="onboarding" class="screen active">
+      <div id="onboarding-inner"></div>
+    </section>
+
+    <!-- MAIN APP -->
+    <section id="main-app" class="screen">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-logo">
+            <svg viewBox="0 0 40 40" fill="none" width="28" height="28"><circle cx="20" cy="20" r="20" fill="#0f172a"/><text x="20" y="28" text-anchor="middle" font-size="22" font-weight="700" fill="#1a9e75" font-family="system-ui,sans-serif">₹</text><path d="M29 8L33 4L37 8" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="33" y1="4" x2="33" y2="14" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="topbar-brand">Nivesh AI</span>
+          </div>
+        </div>
+        <nav class="topbar-nav">
+          <button class="nav-btn active" data-tab="dashboard">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+            Dashboard
+          </button>
+          <button class="nav-btn" data-tab="invest">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z"/></svg>
+            Invest
+          </button>
+          <button class="nav-btn" data-tab="advisor">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/><path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/></svg>
+            AI Advisor
+          </button>
+          <button class="nav-btn" data-tab="portfolio">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+            Portfolio
+          </button>
+          <button class="nav-btn" data-tab="learn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+            Learn
+          </button>
+          <button class="nav-btn" data-tab="tools">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+            Tools
+          </button>
+
+        </nav>
+        <div class="topbar-right">
+          <button class="icon-btn" id="theme-toggle" onclick="ThemeManager.toggle()" title="Toggle dark/light mode">
+            <svg id="theme-icon-moon" viewBox="0 0 20 20" fill="currentColor" width="17"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+            <svg id="theme-icon-sun" viewBox="0 0 20 20" fill="currentColor" width="17" style="display:none;"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+          </button>
+          <button class="icon-btn notif-btn" id="notif-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+            <span class="notif-badge" id="notif-badge">2</span>
+          </button>
+          <div class="user-avatar" id="user-avatar" onclick="ProfileTab.toggleDropdown()" title="My Profile" style="cursor:pointer;">NA</div>
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown" id="profile-dropdown">
+            <div class="pd-header">
+              <div class="pd-avatar" id="pd-avatar">NA</div>
+              <div>
+                <div class="pd-name" id="pd-name">User</div>
+                <div class="pd-sub" id="pd-sub">Balanced · ₹5,000/mo</div>
+              </div>
+            </div>
+            <div class="pd-divider"></div>
+            <button class="pd-item" onclick="ProfileTab.goFullProfile()">👤 Full Profile</button>
+            <button class="pd-item" onclick="ProfileTab.restartOnboarding()">✏️ Edit Profile &amp; Goals</button>
+            <button class="pd-item" onclick="window.Router.go('portfolio');ProfileTab.closeDropdown()">📊 My Portfolio</button>
+            <button class="pd-item" onclick="ProfileTab.testSupabase()">🔌 Test Supabase</button>
+            <div class="pd-divider"></div>
+            <button class="pd-item pd-danger" onclick="ProfileTab.clearData()">🗑️ Start Fresh</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="notif-drawer" id="notif-drawer">
+        <div class="notif-drawer-header">
+          <span>Notifications</span>
+          <button class="notif-clear" id="notif-clear">Clear all</button>
+        </div>
+        <div id="notif-list"></div>
+      </div>
+      <div class="notif-overlay" id="notif-overlay"></div>
+
+      <main class="main-content">
+        <div id="tab-dashboard" class="tab-page active"></div>
+        <div id="tab-invest"    class="tab-page"></div>
+        <div id="tab-advisor"   class="tab-page"></div>
+        <div id="tab-portfolio" class="tab-page"></div>
+        <div id="tab-learn"     class="tab-page"></div>
+        <div id="tab-profile"   class="tab-page"></div>
+        <div id="tab-tools"     class="tab-page"></div>
+      </main>
+
+      <!-- Mobile Bottom Nav -->
+      <nav class="mobile-nav">
+        <button class="mnav-btn active" data-tab="dashboard">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="mnav-btn" data-tab="invest">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg>
+          <span>Invest</span>
+        </button>
+        <button class="mnav-btn advisor-fab" data-tab="advisor">
+          <div class="fab-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="22"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <span>AI</span>
+        </button>
+        <button class="mnav-btn" data-tab="portfolio">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+          <span>Portfolio</span>
+        </button>
+
+        <button class="mnav-btn" data-tab="learn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/></svg>
+          <span>Learn</span>
+        </button>
+        <button class="mnav-btn" data-tab="tools">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+          <span>Tools</span>
+        </button>
+      </nav>
+    </section>
+
+  </div>
+
+  <!-- ALL JS — local only, no CDN -->
+  <!-- Theme must load first to prevent flash -->
+  <script src="/js/theme.js?v=1777721066"></script>
+  <script src="/js/chart.min.js?v=1777721066"></script>
+  <script src="/js/state.js?v=1777721066"></script>
+  <script src="/js/utils.js?v=1777721066"></script>
+  <script src="/js/api.js?v=1777721066"></script>
+  <script src="/js/charts.js?v=1777721066"></script>
+  <script src="/js/tabs/dashboard.js?v=1777721066"></script>
+  <script src="/js/tabs/invest.js?v=1777721066"></script>
+  <script src="/js/tabs/advisor.js?v=1777721066"></script>
+  <script src="/js/tabs/portfolio.js?v=1777721066"></script>
+  <script src="/js/tabs/learn.js?v=1777721066"></script>
+  <script src="/js/tabs/profile.js?v=1777721066"></script>
+  <script src="/js/tabs/tools.js?v=1777721066"></script>
+  <script src="/js/notifications.js?v=1777721066"></script>
+  <script src="/js/router.js?v=1777721066"></script>
+  <script src="/js/onboarding.js?v=1777721066"></script>
+  <script src="/js/supabase.js?v=1777721066"></script>
+  <script src="/js/config.js?v=1777721066"></script>
+  <script src="/js/app.js?v=1777721066"></script>
+</body>
+</html>
