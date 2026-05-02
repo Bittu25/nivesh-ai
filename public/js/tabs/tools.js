@@ -473,26 +473,42 @@ window.ToolsTab = {
   downloadTaxReport: function() {
     var p = window.State.portfolio;
     var u = window.State.user;
-    var lines = [
-      'NIVESH AI — TAX REPORT FY 2025-26',
-      'Generated: ' + new Date().toLocaleDateString('en-IN'),
-      'Investor: ' + u.name,
-      '',
-      'CAPITAL GAINS SUMMARY',
-      '---',
+    var rows = [
+      ['NIVESH AI — CAPITAL GAINS REPORT'],
+      ['FY 2025-26'],
+      ['Investor', u.name],
+      ['Generated', new Date().toLocaleDateString('en-IN')],
+      [],
+      ['Fund', 'Category', 'Invested (₹)', 'Current Value (₹)', 'Gain/Loss (₹)', 'Holding Period', 'Type', 'Tax Rate', 'Est. Tax (₹)'],
     ];
     (p.holdings || []).forEach(function(h) {
       var gain = h.current - h.invested;
-      lines.push(h.name + ' | Invested: ' + window.Utils.fmt(h.invested) + ' | Current: ' + window.Utils.fmt(h.current) + ' | Gain: ' + window.Utils.fmt(gain) + ' | Type: STCG');
+      var taxAmt = Math.max(0, Math.round(gain * (h.category === 'equity' ? 0.15 : 0.30)));
+      rows.push([
+        h.name, h.type,
+        h.invested, h.current,
+        gain, '< 1 year', 'STCG',
+        h.category === 'equity' ? '15%' : 'Slab rate',
+        taxAmt
+      ]);
     });
-    lines.push('');
-    lines.push('NOTE: This is an estimate. Consult a CA for final tax filing.');
+    rows.push([]);
+    rows.push(['NOTE: Estimates only. Consult a CA for ITR filing.']);
+    rows.push(['SEBI Disclaimer: Not investment advice.']);
 
-    var blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+    var csv = rows.map(function(r) {
+      return r.map(function(c) { return '"' + String(c||'').replace(/"/g,'""') + '"'; }).join(',');
+    }).join('\n');
+
+    var blob = new Blob([csv], { type: 'text/csv' });
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
-    a.href = url; a.download = 'NiveshAI_TaxReport_FY2025-26.txt';
-    a.click(); URL.revokeObjectURL(url);
-    window.Utils.toast('Tax report downloaded! 📄', 'success', 2000);
+    a.href = url;
+    a.download = 'NiveshAI_TaxReport_FY2025-26.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    window.Utils.toast('Tax report downloaded as CSV ✓', 'success', 2000);
   },
 };

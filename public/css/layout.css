@@ -100,27 +100,36 @@
 /* ===== Mobile bottom nav ===== */
 .mobile-nav {
   display: none; position: fixed; bottom: 0; left: 0; right: 0;
-  height: 68px; background: var(--surface); border-top: 1px solid var(--border);
-  z-index: var(--z-topbar); padding: 0 8px 6px;
-  align-items: center; justify-content: space-around;
-  box-shadow: 0 -4px 16px rgba(15,23,42,0.08);
+  height: 64px; background: var(--surface); border-top: 1px solid var(--border);
+  z-index: var(--z-topbar); padding: 0;
+  align-items: stretch; justify-content: space-around;
+  box-shadow: 0 -2px 12px rgba(15,23,42,0.12);
 }
 .mnav-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
-  font-size: 11px; font-weight: 500; color: var(--text-3);
-  font-family: var(--font-sans); padding: 6px 10px; border-radius: var(--r);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; font-size: 10px; font-weight: 600; color: var(--text-3);
+  font-family: var(--font-sans); padding: 8px 4px 10px; border-radius: 0;
   transition: all var(--t); flex: 1; border: none; background: transparent;
+  min-width: 0; overflow: hidden;
 }
+.mnav-btn span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 .mnav-btn.active { color: var(--brand); }
 .mnav-btn.active svg { fill: var(--brand) !important; }
-.advisor-fab { position: relative; top: -10px; }
-.advisor-fab .fab-inner {
-  width: 54px; height: 54px; background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 100%);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 18px rgba(26,107,90,0.45);
-  transition: transform var(--t), box-shadow var(--t);
+.advisor-fab {
+  position: relative; flex: 1.2;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding-top: 0;
 }
-.advisor-fab .fab-inner:hover { transform: scale(1.08); box-shadow: 0 6px 22px rgba(26,107,90,0.55); }
+.advisor-fab .fab-inner {
+  width: 52px; height: 52px; background: #0f172a;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(26,107,90,0.5);
+  transition: transform var(--t), box-shadow var(--t);
+  margin-top: -18px; border: 3px solid var(--surface);
+}
+.advisor-fab .fab-inner:hover { transform: scale(1.06); }
+.advisor-fab span { margin-top: 4px; font-size: 10px; font-weight: 600; color: var(--text-3); }
+.advisor-fab.active span { color: var(--brand); }
 
 /* Page section heading */
 .page-header { margin-bottom: 24px; }

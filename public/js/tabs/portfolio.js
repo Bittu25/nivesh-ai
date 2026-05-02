@@ -168,4 +168,46 @@ window.PortfolioTab = {
       }, 80);
     }
   },
+  downloadCSV: function() {
+    var u = window.State.user;
+    var txns = window.State.portfolio.transactions || [];
+    var rows = [['Date','Fund','Type','Amount (INR)','Status']];
+    txns.forEach(function(t) {
+      rows.push([t.date, t.fund, t.type.toUpperCase(), t.amount, 'Done']);
+    });
+    // Also add holdings summary
+    rows.push([]);
+    rows.push(['--- HOLDINGS SUMMARY ---']);
+    rows.push(['Fund','Type','Invested','Current Value','Return %','SIP/mo']);
+    var holdings = window.State.portfolio.holdings || [];
+    holdings.forEach(function(h) {
+      rows.push([h.name, h.type, h.invested, h.current, h.returns+'%', h.sipAmount||0]);
+    });
+    rows.push([]);
+    rows.push(['--- PORTFOLIO SUMMARY ---']);
+    rows.push(['Total Value', window.State.portfolio.totalValue]);
+    rows.push(['Total Invested', window.State.portfolio.totalInvested]);
+    rows.push(['XIRR', window.State.portfolio.xirr + '%']);
+    rows.push(['Generated', new Date().toLocaleDateString('en-IN')]);
+    rows.push(['Investor', u.name]);
+
+    var csv = rows.map(function(r) {
+      return r.map(function(c) { return '"' + String(c).replace(/"/g,'""') + '"'; }).join(',');
+    }).join('\n');
+
+    var blob = new Blob([csv], { type: 'text/csv' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'NiveshAI_Portfolio_' + new Date().toISOString().slice(0,10) + '.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    window.Utils.toast('Portfolio downloaded as CSV ✓', 'success', 2000);
+  },
+
+  downloadHoldings: function() {
+    PortfolioTab.downloadCSV();
+  },
 };
