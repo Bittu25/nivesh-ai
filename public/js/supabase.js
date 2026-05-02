@@ -163,27 +163,5 @@ window.Supabase = {
   },
 
   // Show a small status badge in the UI
-  showStatus: function() {
-    var badge = document.getElementById('sb-status');
-    if (!badge) {
-      badge = document.createElement('div');
-      badge.id = 'sb-status';
-      badge.style.cssText = 'position:fixed;bottom:80px;left:16px;z-index:9000;font-size:11px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;';
-      badge.onclick = function() { window.Supabase.test(); };
-      document.body.appendChild(badge);
-    }
-    if (window.Supabase.configured()) {
-      badge.style.background = '#ecfdf5';
-      badge.style.color = '#059669';
-      badge.style.border = '1px solid #a7f3d0';
-      badge.textContent = '🟢 Supabase connected';
-      badge.title = 'Click to test connection in console';
-    } else {
-      badge.style.background = '#fef3c7';
-      badge.style.color = '#d97706';
-      badge.style.border = '1px solid #fde68a';
-      badge.textContent = '⚪ Supabase (not set)';
-      badge.title = 'Open config.js to add credentials';
-    }
-  },
+  showStatus: function() { /* badge removed */ },
 };
