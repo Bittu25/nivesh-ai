@@ -144,6 +144,7 @@ window.ProfileTab = {
         '<div class="card-header"><div class="card-title">Account Actions</div></div>' +
         '<div class="card-body" style="display:flex;flex-direction:column;gap:10px;padding-top:16px;">' +
           '<button class="btn btn-secondary btn-full" style="justify-content:flex-start;gap:12px;" onclick="ProfileTab.restartOnboarding()"><span>✏️</span> Edit Profile &amp; Goals</button>' +
+          '<button class="btn btn-secondary btn-full" style="justify-content:flex-start;gap:12px;" onclick="window.Router.go(\'learn\')"><span>📚</span> Learn &amp; Calculators</button>' +
           '<button class="btn btn-secondary btn-full" style="justify-content:flex-start;gap:12px;" onclick="ProfileTab.testSupabase()"><span>🔌</span> Test Supabase Connection</button>' +
           '<button class="btn btn-danger btn-full" style="justify-content:flex-start;gap:12px;" onclick="ProfileTab.clearData()"><span>🗑️</span> Clear All Data &amp; Start Fresh</button>' +
         '</div>' +
